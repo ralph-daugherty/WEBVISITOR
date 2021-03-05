@@ -1,0 +1,44 @@
+/*********************************************************************/
+/*            Start up WEBVISITOR file maintenance                  */
+/*                                                                   */
+/*  CL program WEBVISITCP                                            */
+/*    parms: file     web IP records file to maintain                */
+/*           site     website key for file                           */
+/*********************************************************************/
+             pgm (&file &site)
+
+             dcl var(&file) type(*char) len(10)
+             dcl var(&site) type(*char) len(10)
+             dcl var(&lf) type(*char) len(10)
+             dcl var(&fileL1) type(*char) len(10)
+             dcl var(&fileL2) type(*char) len(10)
+             dcl var(&fileL3) type(*char) len(10)
+             dcl var(&fileL4) type(*char) len(10)
+             dcl var(&fileL5) type(*char) len(10)
+
+             if (&file = 'WEBBLOCKER') then(do)
+               chgvar var(&lf) value('WEBBLOCK')
+             enddo
+
+             if (&file = 'WEBVISITOR') then(do)
+               chgvar var(&lf) value('WEBVISIT')
+             enddo
+
+             chgvar var(&fileL1) value(&lf *TCAT 'L1')
+             chgvar var(&fileL2) value(&lf *TCAT 'L2')
+             chgvar var(&fileL3) value(&lf *TCAT 'L3')
+             chgvar var(&fileL4) value(&lf *TCAT 'L4')
+             chgvar var(&fileL5) value(&lf *TCAT 'L5')
+
+             ovrdbf file(WEBIPRECRD) tofile(*libl/&file)
+             ovrdbf file(WEBIPRCDL1) tofile(*libl/&fileL1)
+             ovrdbf file(WEBIPRCDL2) tofile(*libl/&fileL2)
+             ovrdbf file(WEBIPRCDL3) tofile(*libl/&fileL3)
+             ovrdbf file(WEBIPRCDL4) tofile(*libl/&fileL4)
+             ovrdbf file(WEBIPRCDL5) tofile(*libl/&fileL5)
+
+             call pgm(WEBVISITRP) parm(&file &site)
+
+             dltovr file(*all)
+
+             endpgm

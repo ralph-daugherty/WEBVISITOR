@@ -1,0 +1,7 @@
+strpgmexp pgmlvl(*current) signature('WEBVISITOR V1.00')
+                 export    symbol(setPOSDSC)
+                 export    symbol(setIPSEG)
+                 export    symbol(cvtIPSEG)
+                 export    symbol(chkIPBlocked)
+                 export    symbol(chkIPVisited)
+endpgmexp

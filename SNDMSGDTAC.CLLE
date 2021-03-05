@@ -1,0 +1,13 @@
+/*********************************************************************/
+/*            Send message string to message queue                  */
+/*                                                                   */
+/*  CL program SNDMSGDTAC                                            */
+/*    parms: msgdta   message string                                 */
+/*********************************************************************/
+             pgm (&msgdta)
+
+             dcl var(&msgdta) type(*char) len(78)
+
+             sndpgmmsg  msg(&msgdta) topgmq(*prv)
+
+             endpgm

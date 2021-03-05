@@ -1,0 +1,24 @@
+/*********************************************************************/
+/*               RDWRITES migration CL to IFS                        */
+/*                                                                   */
+/*  CL program RDWRITESCA                                            */
+/*    parms: ifsdir        destination IFS subdirectory              */
+/*                         assumes subdirectory to IFS directory     */
+/*                         with same name as source file '/rdwsrc/'  */
+/*********************************************************************/
+             pgm (&ifsdir)
+
+             dcl var(&srclib) type(*char) len(10) value('RDWRITES')
+             dcl var(&srcfile) type(*char) len(10) value('RDWSRC')
+             dcl var(&ifsdir) type(*char) len(10)
+
+             clrpfm file(QTEMP/SRCMBRS)
+             monmsg msgid(CPF0000)
+
+             dspfd file(&srclib/&srcfile) type(*mbr) +
+               output(*outfile) outfile(QTEMP/SRCMBRS)
+
+            /* copy members to IFS directory */
+             call RDWRITESCB parm(&ifsdir)
+
+             endpgm

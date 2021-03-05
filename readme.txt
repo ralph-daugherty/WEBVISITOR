@@ -1,5 +1,5 @@
-# WEBVISITOR
- IBM i RPGLE 5250 Weblog Records File Maintenance
+			WEBVISITOR 5250 Weblog Records File Maintenance
+			open source RPG ILE /free code 
 
    WEBVISITOR / WEBBLOCKER are programs I wrote to help administer my website. They are written in RPG /free with subprocedures and service program. The subfile is page by page style with windowed maintenance screens.
 

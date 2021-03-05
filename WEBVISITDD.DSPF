@@ -1,0 +1,94 @@
+     A*****************************************************************
+     A*               WEBVISITOR File Maintenance Delete
+     A*  Display WEBVISITDD
+     A*****************************************************************
+     A                                      DSPSIZ(24 80 *DS3)
+     A                                      PRINT
+     A*****************************************************************
+     A          R SCN04
+     A                                      WINDOW(01 02 21 74)
+     A                                      WDWBORDER((*COLOR TRQ) (*DSPATR RI)-
+     A                                       (*CHAR '        '))
+     A                                      CF03(03 'Exit')
+     A                                      CF12(12 'Return')
+     A                                      CF22(22 'Delete')
+     A                                      OVERLAY
+     A            PGMNAM        10A  O  1  2COLOR(BLU)
+     A            S4FILE    R        O  1 31REFFLD(WEBVISITR/WEBSITE WEBVISITOR)
+     A                                      COLOR(WHT)
+     A                                  1 42'Delete'
+     A                                      COLOR(WHT)
+     A                                  1 66DATE(*SYS *Y)
+     A                                      EDTCDE(Y)
+     A                                      COLOR(BLU)
+     A                                  2  2USER
+     A                                      COLOR(BLU)
+     A            S4SITE    R        O  2 35REFFLD(WEBVISITR/WEBSITE WEBVISITOR)
+     A                                      COLOR(WHT)
+     A                                  2 66TIME
+     A                                      COLOR(BLU)
+     A*
+     A                                  5  2'IP address ID. .'
+     A                                      COLOR(WHT)
+     A            S4VISITOR R        O  5 19REFFLD(WEBVISITR/VISITOR WEBVISITOR)
+     A                                  6  2'IP address , . .'
+     A                                      COLOR(WHT)
+     A            S4IPSEG1       3A  O  6 19
+     A            S4IPSEG2       3A  O  6 23
+     A            S4IPSEG3       3A  O  6 27
+     A            S4IPSEG4       3A  O  6 31
+     A                                  7  2'Host . . . , . .'
+     A                                      COLOR(WHT)
+     A            S4HOST    R        O  7 19REFFLD(WEBVISITR/HOST   WEBVISITOR)
+     A                                  8  2'City . . . , . .'
+     A                                      COLOR(WHT)
+     A            S4CITY    R        O  8 19REFFLD(WEBVISITR/CITY   WEBVISITOR)
+     A                                  9  2'State. . . , . .'
+     A                                      COLOR(WHT)
+     A            S4STATE   R        O  9 19REFFLD(WEBVISITR/STATE  WEBVISITOR)
+     A                                 10  2'Topic. . . , . .'
+     A                                      COLOR(WHT)
+     A            S4TOPIC   R        O 10 19REFFLD(WEBVISITR/TOPIC  WEBVISITOR)
+     A                                 12  2'User . . . , . .'
+     A                                      COLOR(WHT)
+     A            S4USER    R        O 12 19REFFLD(WEBVISITR/USER   WEBVISITOR)
+     A                                 13  2'Search . . , . .'
+     A                                      COLOR(WHT)
+     A            S4SEARCH  R        O 13 19REFFLD(WEBVISITR/SEARCH WEBVISITOR)
+     A*
+     A                                 19  2'F3=Exit'
+     A                                      COLOR(BLU)
+     A                                 19 12'F12=Return'
+     A                                      COLOR(BLU)
+     A                                 19 25'F22=Delete'
+     A                                      COLOR(BLU)
+     A*
+     A*****************************************************************
+     A          R DELCFMWR
+     A                                      CF03(03 'Exit')
+     A                                      CF12(12 'Return')
+     A                                      WINDOW(9 19 5 40)
+     A                                      WDWBORDER((*COLOR RED) (*DSPATR RI)-
+     A                                       (*CHAR '        '))
+     A                                  2 10'Enter to confirm delete'
+     A                                      COLOR(BLU)
+     A                                  4  2'F3=Exit'
+     A                                      COLOR(BLU)
+     A                                  4 12'F12=Return'
+     A                                      COLOR(BLU)
+     A*****************************************************************
+     A          R MSGSFL                    SFL SFLMSGRCD(20)
+     A            MSGKEY                    SFLMSGKEY
+     A            PGMSGQ                    SFLPGMQ
+     A*
+     A*****************************************************************
+     A          R MSGCTL                    SFLCTL(MSGSFL)
+     A                                      WINDOW(SCN04)
+     A                                      OVERLAY
+     A                                      SFLSIZ(0010)
+     A                                      SFLPAG(0001)
+     A                                      SFLDSP
+     A                                      SFLDSPCTL
+     A                                      SFLINZ
+     A N98                                  SFLEND
+     A            PGMSGQ                    SFLPGMQ

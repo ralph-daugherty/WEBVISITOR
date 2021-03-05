@@ -1,0 +1,15 @@
+/*********************************************************************/
+/*            Send message file id to message queue                  */
+/*                                                                   */
+/*  CL program SNDMSGIDC                                             */
+/*    parms: msgf     message file                                   */
+/*           msgid    message id                                     */
+/*********************************************************************/
+             pgm (&msgf &msgid)
+
+             dcl var(&msgf) type(*char) len(10)
+             dcl var(&msgid) type(*char) len(7)
+
+             sndpgmmsg  msgid(&msgid) msgf(&msgf) topgmq(*prv)
+
+             endpgm

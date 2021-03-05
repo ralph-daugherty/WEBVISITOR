@@ -1,0 +1,13 @@
+     A*****************************************************************
+     A*                      Website Visitors
+     A*  File WEBVISITL5
+     A*    ordered TOPIC, HOST, IPSEG1, IPSEG2, IPSEG3, IPSEG4
+     A*****************************************************************
+     A          R WEBVISITR                 PFILE(WEBVISITOR)
+     A          K WEBSITE
+     A          K TOPIC
+     A          K HOST
+     A          K IPSEG1
+     A          K IPSEG2
+     A          K IPSEG3
+     A          K IPSEG4

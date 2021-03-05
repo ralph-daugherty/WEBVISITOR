@@ -1,0 +1,14 @@
+     A*****************************************************************
+     A*                      Website IP Blocker
+     A*  File WEBBLOCKL4
+     A*    ordered CITY, STATE, HOST, IPSEG1, IPSEG2, IPSEG3, IPSEG4
+     A*****************************************************************
+     A          R WEBVISITR                 PFILE(WEBBLOCKER)
+     A          K WEBSITE
+     A          K CITY
+     A          K STATE
+     A          K HOST
+     A          K IPSEG1
+     A          K IPSEG2
+     A          K IPSEG3
+     A          K IPSEG4

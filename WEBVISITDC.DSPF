@@ -1,0 +1,88 @@
+     A*****************************************************************
+     A*               WEBVISITOR File Maintenance Update
+     A*  Display WEBVISITDC
+     A*****************************************************************
+     A                                      DSPSIZ(24 80 *DS3)
+     A                                      PRINT
+     A*****************************************************************
+     A          R SCN02
+     A                                      WINDOW(01 02 21 74)
+     A                                      WDWBORDER((*COLOR TRQ) (*DSPATR RI)-
+     A                                       (*CHAR '        '))
+     A                                      CF03(03 'Exit')
+     A                                      CF10(10 'Save')
+     A                                      CF12(12 'Return')
+     A                                      OVERLAY
+     A            PGMNAM        10A  O  1  2COLOR(BLU)
+     A            S2FILE    R        O  1 32REFFLD(WEBVISITR/WEBSITE WEBVISITOR)
+     A                                      COLOR(WHT)
+     A                                  1 43'Update'
+     A                                      COLOR(WHT)
+     A                                  1 66DATE(*SYS *Y)
+     A                                      EDTCDE(Y)
+     A                                      COLOR(BLU)
+     A                                  2  2USER
+     A                                      COLOR(BLU)
+     A            S2SITE    R        O  2 36REFFLD(WEBVISITR/WEBSITE WEBVISITOR)
+     A                                      COLOR(WHT)
+     A                                  2 66TIME
+     A                                      COLOR(BLU)
+     A*
+     A                                  5  2'IP address ID. .'
+     A                                      COLOR(WHT)
+     A            S2VISITOR R        O  5 19REFFLD(WEBVISITR/VISITOR WEBVISITOR)
+     A                                  6  2'IP address , . .'
+     A                                      COLOR(WHT)
+     A            ATBIPSEG1      1A  P
+     A            S2IPSEG1  R        B  6 19REFFLD(WEBVISITR/IPSEG1 WEBVISITOR)
+     A                                      DSPATR(&ATBIPSEG1)
+     A            S2IPSEG2  R        B  6 24REFFLD(WEBVISITR/IPSEG2 WEBVISITOR)
+     A            S2IPSEG3  R        B  6 29REFFLD(WEBVISITR/IPSEG3 WEBVISITOR)
+     A            S2IPSEG4  R        B  6 34REFFLD(WEBVISITR/IPSEG4 WEBVISITOR)
+     A                                  7  2'Host . . . , . .'
+     A                                      COLOR(WHT)
+     A            S2HOST    R        B  7 19REFFLD(WEBVISITR/HOST   WEBVISITOR)
+     A                                      CHECK(LC)
+     A                                  8  2'City . . . , . .'
+     A                                      COLOR(WHT)
+     A            S2CITY    R        B  8 19REFFLD(WEBVISITR/CITY   WEBVISITOR)
+     A                                      CHECK(LC)
+     A                                  9  2'State. . . , . .'
+     A                                      COLOR(WHT)
+     A            S2STATE   R        B  9 19REFFLD(WEBVISITR/STATE  WEBVISITOR)
+     A                                 10  2'Topic. . . , . .'
+     A                                      COLOR(WHT)
+     A            S2TOPIC   R        B 10 19REFFLD(WEBVISITR/TOPIC  WEBVISITOR)
+     A                                      CHECK(LC)
+     A                                 12  2'User . . . , . .'
+     A                                      COLOR(WHT)
+     A            S2USER    R        B 12 19REFFLD(WEBVISITR/USER   WEBVISITOR)
+     A                                      CHECK(LC)
+     A                                 13  2'Search . . , . .'
+     A                                      COLOR(WHT)
+     A            S2SEARCH  R        B 13 19REFFLD(WEBVISITR/SEARCH WEBVISITOR)
+     A                                      CHECK(LC)
+     A*
+     A                                 19  2'F3=Exit'
+     A                                      COLOR(BLU)
+     A                                 19 12'F10=Save'
+     A                                      COLOR(BLU)
+     A                                 19 23'F12=Return'
+     A                                      COLOR(BLU)
+     A*
+     A*****************************************************************
+     A          R MSGSFL                    SFL SFLMSGRCD(20)
+     A            MSGKEY                    SFLMSGKEY
+     A            PGMSGQ                    SFLPGMQ
+     A*
+     A*****************************************************************
+     A          R MSGCTL                    SFLCTL(MSGSFL)
+     A                                      WINDOW(SCN02)
+     A                                      OVERLAY
+     A                                      SFLSIZ(0010)
+     A                                      SFLPAG(0001)
+     A                                      SFLDSP
+     A                                      SFLDSPCTL
+     A                                      SFLINZ
+     A N98                                  SFLEND
+     A            PGMSGQ                    SFLPGMQ

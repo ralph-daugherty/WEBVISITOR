@@ -1,0 +1,33 @@
+     A*****************************************************************
+     A*                      Website IP Blocker
+     A*  File WEBBLOCKER
+     A*    ordered VISITOR
+     A*****************************************************************
+     A          R WEBVISITR                 TEXT('Website visitor record')
+     A            WEBSITE       10A         TEXT('Website')
+     A                                      COLHDG('Website')
+     A            VISITOR        7  0       TEXT('Visitor')
+     A                                      COLHDG('Visitor')
+     A            IPSEG1         3  0       TEXT('IP segment 1')
+     A                                      COLHDG('IP segment 1')
+     A            IPSEG2         3  0       TEXT('IP segment 2')
+     A                                      COLHDG('IP segment 2')
+     A            IPSEG3         3  0       TEXT('IP segment 3')
+     A                                      COLHDG('IP segment 3')
+     A            IPSEG4         3  0       TEXT('IP segment 4')
+     A                                      COLHDG('IP segment 4')
+     A            HOST          32A         TEXT('Host name')
+     A                                      COLHDG('Host name')
+     A            CITY          32A         TEXT('City where located')
+     A                                      COLHDG('City' 'where located')
+     A            STATE          2A         TEXT('State where located')
+     A                                      COLHDG('State' 'where located')
+     A            TOPIC          6A         TEXT('Topic')
+     A                                      COLHDG('Topic')
+     A            USER          14A         TEXT('User')
+     A                                      COLHDG('User')
+     A            SEARCH        32A         TEXT('Search')
+     A                                      COLHDG('Search')
+     A*****************************************************************
+     A          K WEBSITE
+     A          K VISITOR

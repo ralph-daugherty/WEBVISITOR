@@ -1,0 +1,298 @@
+/*********************************************************************/
+/*               WEBVISITOR Install CL                               */
+/*                                                                   */
+/*  CL program WEBVISITCA                                            */
+/*    parms: none                                                    */
+/*********************************************************************/
+             pgm
+
+             dcl var(&lib) type(*char) len(10) value('RDWRITES')
+             dcl var(&srclib) type(*char) len(10) value('RDWRITES')
+
+             chkobj obj(&lib/WEBVISITOR) objtype(*file)
+             monmsg msgid(CPF9801) exec(do)
+               crtpf file(&lib/WEBVISITOR) +
+                 srcfile(&srclib/RDWSRC) +
+                 size(1000000 10000)
+             enddo
+
+             chkobj obj(&lib/WEBBLOCKER) objtype(*file)
+             monmsg msgid(CPF9801) exec(do)
+               crtpf file(&lib/WEBBLOCKER) +
+                 srcfile(&srclib/RDWSRC)
+             enddo
+
+             chkobj obj(&lib/WEBIPRECRD) objtype(*file)
+             monmsg msgid(CPF9801) exec(do)
+               crtpf file(&lib/WEBIPRECRD) +
+                 srcfile(&srclib/RDWSRC)
+             enddo
+
+             chkobj obj(&lib/WEBVISITL1) objtype(*file)
+             monmsg msgid(CPF9801) exec(do)
+               crtlf file(&lib/WEBVISITL1) +
+                 srcfile(&srclib/RDWSRC)
+             enddo
+
+             chkobj obj(&lib/WEBVISITL2) objtype(*file)
+             monmsg msgid(CPF9801) exec(do)
+               crtlf file(&lib/WEBVISITL2) +
+                 srcfile(&srclib/RDWSRC)
+             enddo
+
+             chkobj obj(&lib/WEBVISITL3) objtype(*file)
+             monmsg msgid(CPF9801) exec(do)
+               crtlf file(&lib/WEBVISITL3) +
+                 srcfile(&srclib/RDWSRC)
+             enddo
+
+             chkobj obj(&lib/WEBVISITL4) objtype(*file)
+             monmsg msgid(CPF9801) exec(do)
+               crtlf file(&lib/WEBVISITL4) +
+                 srcfile(&srclib/RDWSRC)
+             enddo
+
+             chkobj obj(&lib/WEBVISITL5) objtype(*file)
+             monmsg msgid(CPF9801) exec(do)
+               crtlf file(&lib/WEBVISITL5) +
+                 srcfile(&srclib/RDWSRC)
+             enddo
+
+             chkobj obj(&lib/WEBBLOCKL1) objtype(*file)
+             monmsg msgid(CPF9801) exec(do)
+               crtlf file(&lib/WEBBLOCKL1) +
+                 srcfile(&srclib/RDWSRC)
+             enddo
+
+             chkobj obj(&lib/WEBBLOCKL2) objtype(*file)
+             monmsg msgid(CPF9801) exec(do)
+               crtlf file(&lib/WEBBLOCKL2) +
+                 srcfile(&srclib/RDWSRC)
+             enddo
+
+             chkobj obj(&lib/WEBBLOCKL3) objtype(*file)
+             monmsg msgid(CPF9801) exec(do)
+               crtlf file(&lib/WEBBLOCKL3) +
+                 srcfile(&srclib/RDWSRC)
+             enddo
+
+             chkobj obj(&lib/WEBBLOCKL4) objtype(*file)
+             monmsg msgid(CPF9801) exec(do)
+               crtlf file(&lib/WEBBLOCKL4) +
+                 srcfile(&srclib/RDWSRC)
+             enddo
+
+             chkobj obj(&lib/WEBBLOCKL5) objtype(*file)
+             monmsg msgid(CPF9801) exec(do)
+               crtlf file(&lib/WEBBLOCKL5) +
+                 srcfile(&srclib/RDWSRC)
+             enddo
+
+             chkobj obj(&lib/WEBIPRCDL1) objtype(*file)
+             monmsg msgid(CPF9801) exec(do)
+               crtlf file(&lib/WEBIPRCDL1) +
+                 srcfile(&srclib/RDWSRC)
+             enddo
+
+             chkobj obj(&lib/WEBIPRCDL2) objtype(*file)
+             monmsg msgid(CPF9801) exec(do)
+               crtlf file(&lib/WEBIPRCDL2) +
+                 srcfile(&srclib/RDWSRC)
+             enddo
+
+             chkobj obj(&lib/WEBIPRCDL3) objtype(*file)
+             monmsg msgid(CPF9801) exec(do)
+               crtlf file(&lib/WEBIPRCDL3) +
+                 srcfile(&srclib/RDWSRC)
+             enddo
+
+             chkobj obj(&lib/WEBIPRCDL4) objtype(*file)
+             monmsg msgid(CPF9801) exec(do)
+               crtlf file(&lib/WEBIPRCDL4) +
+                 srcfile(&srclib/RDWSRC)
+             enddo
+
+             chkobj obj(&lib/WEBIPRCDL5) objtype(*file)
+             monmsg msgid(CPF9801) exec(do)
+               crtlf file(&lib/WEBIPRCDL5) +
+                 srcfile(&srclib/RDWSRC)
+             enddo
+
+             chkobj obj(&lib/WEBVISITD) objtype(*file)
+             monmsg msgid(CPF9801) exec(do)
+               crtdspf file(&lib/WEBVISITD) +
+                 srcfile(&srclib/RDWSRC)
+             enddo
+
+             chkobj obj(&lib/WEBVISITDA) objtype(*file)
+             monmsg msgid(CPF9801) exec(do)
+               crtdspf file(&lib/WEBVISITDA) +
+                 srcfile(&srclib/RDWSRC)
+             enddo
+
+             chkobj obj(&lib/WEBVISITDB) objtype(*file)
+             monmsg msgid(CPF9801) exec(do)
+               crtdspf file(&lib/WEBVISITDB) +
+                 srcfile(&srclib/RDWSRC)
+             enddo
+
+             chkobj obj(&lib/WEBVISITDC) objtype(*file)
+             monmsg msgid(CPF9801) exec(do)
+               crtdspf file(&lib/WEBVISITDC) +
+                 srcfile(&srclib/RDWSRC)
+             enddo
+
+             chkobj obj(&lib/WEBVISITDD) objtype(*file)
+             monmsg msgid(CPF9801) exec(do)
+               crtdspf file(&lib/WEBVISITDD) +
+                 srcfile(&srclib/RDWSRC)
+             enddo
+
+             chkobj obj(&lib/WEBVISITSV) objtype(*srvpgm)
+             monmsg msgid(CPF9801) exec(do)
+               crtrpgmod module(&lib/WEBVISITSV) +
+                 srcfile(&srclib/RDWSRC)
+               crtsrvpgm srvpgm(&lib/WEBVISITSV) +
+                 srcfile(&srclib/RDWSRC) +
+                 srcmbr(WEBVISITBN)
+             enddo
+
+             chkobj obj(&lib/RDWRITES) objtype(*bnddir)
+             monmsg msgid(CPF9801) exec(do)
+               crtbnddir bnddir(&lib/RDWRITES)
+                 addbnddire bnddir(&lib/RDWRITES) +
+                   obj((&lib/WEBVISITSV))
+             enddo
+
+             chkobj obj(&lib/WEBVISITRP) objtype(*pgm)
+             monmsg msgid(CPF9801) exec(do)
+               crtbndrpg pgm(&lib/WEBVISITRP) +
+                 srcfile(&srclib/RDWSRC)
+             enddo
+
+             chkobj obj(&lib/WEBVISITRA) objtype(*pgm)
+             monmsg msgid(CPF9801) exec(do)
+               crtbndrpg pgm(&lib/WEBVISITRA) +
+                 srcfile(&srclib/RDWSRC)
+             enddo
+
+             chkobj obj(&lib/WEBVISITRB) objtype(*pgm)
+             monmsg msgid(CPF9801) exec(do)
+               crtbndrpg pgm(&lib/WEBVISITRB) +
+                 srcfile(&srclib/RDWSRC)
+             enddo
+
+             chkobj obj(&lib/WEBVISITRC) objtype(*pgm)
+             monmsg msgid(CPF9801) exec(do)
+               crtbndrpg pgm(&lib/WEBVISITRC) +
+                 srcfile(&srclib/RDWSRC)
+             enddo
+
+             chkobj obj(&lib/WEBVISITRD) objtype(*pgm)
+             monmsg msgid(CPF9801) exec(do)
+               crtbndrpg pgm(&lib/WEBVISITRD) +
+                 srcfile(&srclib/RDWSRC)
+             enddo
+
+             chkobj obj(&lib/WEBVISITRE) objtype(*pgm)
+             monmsg msgid(CPF9801) exec(do)
+               crtbndrpg pgm(&lib/WEBVISITRE) +
+                 srcfile(&srclib/RDWSRC)
+             enddo
+
+             chkobj obj(&lib/WEBVISITCP) objtype(*pgm)
+             monmsg msgid(CPF9801) exec(do)
+               crtbndcl pgm(&lib/WEBVISITCP) +
+                 srcfile(&srclib/RDWSRC) +
+                 actgrp(RDWRITES)
+             enddo
+
+             chkobj obj(&lib/CLRMSGC) objtype(*pgm)
+             monmsg msgid(CPF9801) exec(do)
+               crtbndcl pgm(&lib/CLRMSGC) +
+                 srcfile(&srclib/RDWSRC)
+             enddo
+
+             chkobj obj(&lib/SNDMSGIDC) objtype(*pgm)
+             monmsg msgid(CPF9801) exec(do)
+               crtbndcl pgm(&lib/SNDMSGIDC) +
+                 srcfile(&srclib/RDWSRC)
+             enddo
+
+             chkobj obj(&lib/RDWVISITOR) objtype(*cmd)
+             monmsg msgid(CPF9801) exec(do)
+               crtcmd cmd(&lib/RDWVISITOR) +
+                 pgm(&lib/WEBVISITCP) +
+                 srcfile(&srclib/RDWSRC)
+             enddo
+
+             chkobj obj(&lib/RDWBLOCKER) objtype(*cmd)
+             monmsg msgid(CPF9801) exec(do)
+               crtcmd cmd(&lib/RDWBLOCKER) +
+                 pgm(&lib/WEBVISITCP) +
+                 srcfile(&srclib/RDWSRC)
+             enddo
+
+             chkobj obj(&lib/RDWMSGF) objtype(*msgf)
+             monmsg msgid(CPF9801) exec(do)
+               crtmsgf msgf(&lib/RDWMSGF)
+
+               addmsgd msgid(RDW0001) +
+                 msgf(&lib/RDWMSGF) +
+                 msg('test')
+
+               addmsgd msgid(RDW0002) +
+                 msgf(&lib/RDWMSGF) +
+                 msg('No records to display.')
+
+               addmsgd msgid(RDW0003) +
+                 msgf(&lib/RDWMSGF) +
+                 msg('Required field.')
+
+               addmsgd msgid(RDW0004) +
+                 msgf(&lib/RDWMSGF) +
+                 msg('Record added.')
+
+               addmsgd msgid(RDW0005) +
+                 msgf(&lib/RDWMSGF) +
+                 msg('Record updated.')
+
+               addmsgd msgid(RDW0006) +
+                 msgf(&lib/RDWMSGF) +
+                 msg('Record deleted.')
+
+               addmsgd msgid(RDW0007) +
+                 msgf(&lib/RDWMSGF) +
+                 msg('Press F22 to delete.')
+
+               addmsgd msgid(RDW0008) +
+                 msgf(&lib/RDWMSGF) +
+                 msg('Press F10 to save.')
+
+               addmsgd msgid(RDW0009) +
+                 msgf(&lib/RDWMSGF) +
+                 msg('Selection not completed.')
+
+               addmsgd msgid(RDW0010) +
+                 msgf(&lib/RDWMSGF) +
+                 msg('Record I/O failure. Please exit and check for ' +
+                   *cat 'any problems before resuming.')
+
+               addmsgd msgid(RDW0011) +
+                 msgf(&lib/RDWMSGF) +
+                 msg('Numeric overflow. Operation failed.')
+
+               addmsgd msgid(RDW0012) +
+                 msgf(&lib/RDWMSGF) +
+                 msg('Invalid option.')
+
+               addmsgd msgid(RDW0013) +
+                 msgf(&lib/RDWMSGF) +
+                 msg('Warning: Visitor is blocked.')
+
+               addmsgd msgid(RDW0014) +
+                 msgf(&lib/RDWMSGF) +
+                 msg('Warning: Visitor will be blocked.')
+             enddo
+
+             endpgm
